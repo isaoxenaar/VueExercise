@@ -1,6 +1,7 @@
 let app = new Vue({
   el: "#app",
   data: {
+    editMode: false,
     frameworks: [
       { name: "Vue.js", votes: 0 },
       { name: "React", votes: 0 },
@@ -33,6 +34,9 @@ let app = new Vue({
     save: function () {
       let data = JSON.stringify(this.frameworks);
       localStorage.setItem("saved", data);
+    },
+    toggleEditMode: function () {
+      this.editMode = !this.editMode;
     },
   },
   created: function () {
