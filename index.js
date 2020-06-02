@@ -7,4 +7,9 @@ let app = new Vue({
       { name: "Angular", votes: 0 },
     ],
   },
+  methods: {
+    voteFor: function (f) {
+      f.votes += 1;
+    },
+  },
 });

@@ -9,7 +9,10 @@
   <body>
     <div id="app">
       <ul>
-        <li v-for="f in frameworks">{{f.name}} has {{f.votes}} votes</li>
+        <li v-for="f in frameworks">
+          {{f.name}} has {{f.votes}} votes
+          <button v-on:click="voteFor(f)">Vote</button>
+        </li>
       </ul>
     </div>
     <script src="index.js"></script>
