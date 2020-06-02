@@ -10,6 +10,7 @@ let app = new Vue({
   methods: {
     voteFor: function (f) {
       f.votes += 1;
+      this.save();
     },
     addNew: function (event) {
       this.frameworks.push({
@@ -17,9 +18,24 @@ let app = new Vue({
         votes: 0,
       });
       event.target.value = "";
+      this.save();
     },
     remove: function (f) {
       this.frameworks = this.frameworks.filter((i) => i != f);
+      this.save();
     },
+    load: function () {
+      let data = localStorage.getItem("saved");
+      if (data) {
+        this.frameworks = JSON.parse(data);
+      }
+    },
+    save: function () {
+      let data = JSON.stringify(this.frameworks);
+      localStorage.setItem("saved", data);
+    },
+  },
+  created: function () {
+    this.load();
   },
 });
