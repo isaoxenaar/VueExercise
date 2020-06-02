@@ -1,6 +1,10 @@
 let app = new Vue({
   el: "#app",
   data: {
-    message: "Vue is working!",
+    frameworks: [
+      { name: "Vue.js", votes: 0 },
+      { name: "React", votes: 0 },
+      { name: "Angular", votes: 0 },
+    ],
   },
 });
