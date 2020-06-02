@@ -18,5 +18,8 @@ let app = new Vue({
       });
       event.target.value = "";
     },
+    remove: function (f) {
+      this.frameworks = this.frameworks.filter((i) => i != f);
+    },
   },
 });

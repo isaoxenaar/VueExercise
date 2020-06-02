@@ -12,6 +12,7 @@
         <li v-for="f in frameworks">
           {{f.name}} has {{f.votes}} votes
           <button v-on:click="voteFor(f)">Vote</button>
+          <a href="#" v-on:click="remove(f)">Delete</a>
         </li>
       </ul>
       <input placeholder="Add new" v-on:keyup.enter="addNew" />
