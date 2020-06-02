@@ -15,6 +15,7 @@
           <a href="#" v-if="editMode" v-on:click="remove(f)">Delete</a>
         </li>
       </ul>
+      <p>Current Winner(s): {{winnerString}}</p>
       <button v-on:click="toggleEditMode">
         {{ editMode ? 'Done' : 'Edit' }}
       </button>
